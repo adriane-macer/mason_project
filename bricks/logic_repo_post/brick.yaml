@@ -1,4 +1,4 @@
-name: logic_repo
+name: logic_repo_post
 description: A new brick created with the Mason CLI.
 
 # The following defines the brick repository url.
@@ -29,5 +29,20 @@ vars:
   name:
     type: string
     description: Logic name
-    default: GetData
+    default: post
     prompt: What is the logic?
+
+  project_name:
+    type: string
+    description: Project name
+    default: ProjectName
+    prompt: Project name?
+
+  method_name:
+    type: string
+    description: Method name
+    default: getData
+    prompt: What is the method name?
+
+# mason make logic_repo_get_data -o [destination] --project_name [project] --name [logic name] --method_name [method name]
+

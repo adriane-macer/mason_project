@@ -15,8 +15,9 @@ final class {{name.pascalCase()}}Loading extends {{name.pascalCase()}}State {
 }
 
 final class {{name.pascalCase()}}Success extends {{name.pascalCase()}}State {
-  @override
-  List<Object> get props => [];
+
+    @override
+    List<Object> get props => [];
 }
 
 final class {{name.pascalCase()}}Failed extends {{name.pascalCase()}}State {

@@ -11,7 +11,7 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
       : super({{name.pascalCase()}}Initial());
   final I{{name.pascalCase()}}Repository _repository;
 
-  Future<void> {{method_name.camelCase()}}({) async {
+  Future<void> {{method_name.camelCase()}}() async {
     emit({{name.pascalCase()}}Loading());
 
     try {

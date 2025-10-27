@@ -4,14 +4,13 @@ import 'package:{{project_name.snakeCase()}}/core/barrels/remote_repository_barr
 
 class {{name.pascalCase()}}RemoteRepository extends I{{name.pascalCase()}}Repository {
 
-
   late Dio _dioClient;
 
   {{name.pascalCase()}}RemoteRepository() {
     _dioClient = DioClient().instance;
   }
 
-  Future<{{return_class.snakeCase()}}> {{method_name.snakeCase()}}(){
+  Future<void> {{method_name.camelCase()}}() async{
     try {
       final token = getIt<TokenStorage>().read();
 
@@ -28,9 +27,6 @@ class {{name.pascalCase()}}RemoteRepository extends I{{name.pascalCase()}}Reposi
       }
 
       final response = await _dioClient.get(); // TODO add path
-      final json = response.data as Map<String, dynamic>;
-      return
-            {{return_class.pascalCase()}}.fromJson(json['data']);
     } on DioException catch (e) {
       throw DioExceptionHelper.getException(e);
     }  catch (e) {
