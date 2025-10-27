@@ -2,8 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:{{project_name.snakeCase()}}/core/errors/custom_exception.dart';
 
-import '../{{name.snakeCase()}}_barrel.dart';
-
 part '{{name.snakeCase()}}_state.dart';
 
 class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
