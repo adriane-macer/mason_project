@@ -1,4 +1,4 @@
-name: logic_repo_get_data
+name: logic_repo_get_list
 description: A new brick created with the Mason CLI.
 
 # The following defines the brick repository url.
@@ -47,8 +47,8 @@ vars:
   return_class:
     type: string
     description: Return class
-    default: GetDataResponse
+    default: GetListResponse
     prompt: What is the return class?
 
-# mason make logic_repo_get_data -o [destination] --project_name [project] --name [logic name] --method_name [method name] --return_class [class model]
+# mason make logic_repo_get_list -o [destination] --project_name [project] --name [logic name] --method_name [method name] --return_class [class model]
 

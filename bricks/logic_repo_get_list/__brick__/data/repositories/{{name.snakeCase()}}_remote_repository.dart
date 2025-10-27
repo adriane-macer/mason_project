@@ -11,7 +11,7 @@ class {{name.pascalCase()}}RemoteRepository extends I{{name.pascalCase()}}Reposi
     _dioClient = DioClient().instance;
   }
 
-  Future<{{return_class.pascalCase()}}> {{method_name.snakeCase()}}() async{
+  Future<List<{{return_class.pascalCase()}}>> {{method_name.camelCase()}}() async{
     try {
       final token = getIt<TokenStorage>().read();
 
@@ -28,9 +28,13 @@ class {{name.pascalCase()}}RemoteRepository extends I{{name.pascalCase()}}Reposi
       }
 
       final response = await _dioClient.get(); // TODO add path
+
       final json = response.data as Map<String, dynamic>;
-      return
-            {{return_class.pascalCase()}}.fromJson(json['data']);
+      final list = (json["data"] as List)
+          .map((data) =>
+          {{return_class.pascalCase()}}.fromJson(data as Map<String, dynamic>))
+          .toList();
+      return list;
     } on DioException catch (e) {
       throw DioExceptionHelper.getException(e);
     }  catch (e) {

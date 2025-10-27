@@ -15,8 +15,8 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
     emit({{name.pascalCase()}}Loading());
 
     try {
-      // TODO implement code
-      emit({{name.pascalCase()}}Success());
+      final result = await _repository.{{method_name.camelCase()}}();
+      emit({{name.pascalCase()}}Success(result));
     } on CustomException catch (e) {
       emit({{name.pascalCase()}}Failed(e));
     } catch (e) {

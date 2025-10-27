@@ -7,13 +7,13 @@ import '../../{{name.snakeCase()}}_barrel.dart';
 import 'package:{{project_name.snakeCase()}}/core/barrels/remote_repository_barrel.dart';
 
 class {{name.pascalCase()}}FakeRepository extends I{{name.pascalCase()}}Repository {
-  Future<{{return_class.pascalCase()}}> {{method_name.snakeCase()}}() async{
+  Future<List<{{return_class.pascalCase()}}>> {{method_name.camelCase()}}() async{
     await Future.delayed(const Duration(milliseconds: 1500));
     try {
       final response =
       await rootBundle.loadString(); //TODO add asset file
-      final decoded = jsonDecode(response) as Map<String, dynamic>;
-      return {{return_class.pascalCase()}}.fromJson(decoded['data']);
+      final decoded = jsonDecode(response)['data'] as List;
+      return (decoded).map((data) => {{return_class.pascalCase()}}.fromJson(data)).toList();
     } on DioException catch (e) {
       throw DioExceptionHelper.getException(e);
     }  catch (e) {
