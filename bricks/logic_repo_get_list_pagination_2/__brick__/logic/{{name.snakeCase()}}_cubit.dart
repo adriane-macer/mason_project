@@ -12,9 +12,10 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
   final I{{name.pascalCase()}}Repository _repository;
 
 
-  bool loading = false;
-  static const int _limit = 10;
+  List<{{return_class.pascalCase()}}> medias = <{{return_class.pascalCase()}}>[];
+  final int _limit = 10;
   String? cursor;
+  bool loading = false;
   List<{{return_class.pascalCase()}}> list = [];
 
   Future<void> initialize() async {
@@ -23,11 +24,11 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
   emit({{name.pascalCase()}}Loading());
   try {
     final result =
-    await _repository.{{method_name.camelCase()}}(limit: _limit);
-    if (result.isNotEmpty) {
-        list.addAll(result);
+    await _repository.{{method_name.camelCase()}}(limit: _limit, cursor: cursor);
+    if (result.$1.isNotEmpty) {
+        list.addAll(result.$1);
       }
-        emit({{name.pascalCase()}}Success(result));
+        emit({{name.pascalCase()}}Success(result.$1));
     } catch (e) {
       if (e is CustomException) {
         emit({{name.pascalCase()}}Failed(e));
@@ -47,11 +48,12 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
     emit({{name.pascalCase()}}Loading());
     try {
       final result = await _repository.{{method_name.camelCase()}}(
-      offset: list.length, limit: _limit);
-      if (result.isNotEmpty) {
-        list.addAll(result);
+      limit: _limit, cursor: cursor);
+      if (result.$1.isNotEmpty) {
+        list.addAll(result.$1);
+        cursor = result.$2;
       }
-      emit({{name.pascalCase()}}Success(result));
+      emit({{name.pascalCase()}}Success(result.$1));
     } catch (e) {
       if (e is CustomException) {
         emit({{name.pascalCase()}}Failed(e));
