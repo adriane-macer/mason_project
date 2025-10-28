@@ -10,7 +10,7 @@ class {{name.pascalCase()}}RemoteRepository extends I{{name.pascalCase()}}Reposi
   {{name.pascalCase()}}RemoteRepository() {
     _dioClient = DioClient().instance;
   }
-
+  @override
   Future<List<{{return_class.pascalCase()}}Model>> {{method_name.camelCase()}}() async{
     try {
       final token = getIt<TokenStorage>().read();

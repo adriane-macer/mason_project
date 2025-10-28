@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:{{project_name.snakeCase()}}/core/services/storages/hive/abstract_hive_service.dart';
-import 'package:{{project_name.snakeCase()}}/features/get_employment_status/data/models/employment_status_entity.dart';
-import 'package:{{project_name.snakeCase()}}/features/get_employment_status/data/models/employment_status_model.dart';
+import '../../{{name.snakeCase()}}_barrel.dart';
 import 'package:hive/hive.dart';
 
 class {{return_class.pascalCase()}}HiveService

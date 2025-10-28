@@ -7,6 +7,7 @@ import '../../{{name.snakeCase()}}_barrel.dart';
 import 'package:{{project_name.snakeCase()}}/core/barrels/remote_repository_barrel.dart';
 
 class {{name.pascalCase()}}FakeRepository extends I{{name.pascalCase()}}Repository {
+  @override
   Future<List<{{return_class.pascalCase()}}Model>> {{method_name.camelCase()}}() async{
     await Future.delayed(const Duration(milliseconds: 1500));
     try {
