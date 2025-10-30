@@ -1,5 +1,5 @@
-import 'package:hiraya/core/data/entities/object_entity.dart';
-import 'package:hiraya/features/get_employment_status/data/models/employment_status_model.dart';
+import 'package:{{projec_name.snakeCase()}}/core/data/entities/object_entity.dart';
+import 'package:{{projec_name.snakeCase()}}/features/get_employment_status/data/models/employment_status_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 part '{{return_class.snakeCase()}}_entity.g.dart';
