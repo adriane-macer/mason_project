@@ -100,9 +100,7 @@ class _{{return_class.pascalCase()}}ScreenState extends State<{{return_class.pas
   }
 
   void _unregisterFactories() {
-    GetItHelper.unregisterFactory<I{
-  {name.pascalCase()}
-    }Repository>();
+    GetItHelper.unregisterFactory<I{{name.pascalCase()}}Repository>();
     GetItHelper.unregisterFactory< {{name.pascalCase()}}Cubit>();
   }
 
@@ -118,16 +116,13 @@ class _{{return_class.pascalCase()}}ScreenState extends State<{{return_class.pas
     switch (appConfig.appFlavor) {
       case AppFlavors.dev:
       case AppFlavors.prod:
-        GetItHelper.registerFactory<I
-        {
-        {name.pascalCase()}
-        }Repository>(
-    {{name.pascalCase()}}RemoteRepository(),
+        GetItHelper.registerFactory<I{{name.pascalCase()}}Repository>(
+            {{name.pascalCase()}}RemoteRepository(),
         );
         break;
       case AppFlavors.demo:
         GetItHelper.registerFactory<I{{name.pascalCase()}}Repository>(
-    {{name.pascalCase()}}FakeRepository(),
+            {{name.pascalCase()}}FakeRepository(),
         );
     }
   }

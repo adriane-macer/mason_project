@@ -4,3 +4,4 @@ export 'data/repositories/{{name.snakeCase()}}_remote_repository.dart';
 export 'logic/{{name.snakeCase()}}_cubit.dart';
 export 'data/models/{{return_class.snakeCase()}}_model.dart';
 export 'data/entities/{{return_class.snakeCase()}}_entity.dart';
+export 'package:{{project_name}}/app/config/config_barrel.dart';

@@ -1,13 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:{{project_name.snakeCase()}}/app/config/service_locator.dart';
 import 'package:{{project_name.snakeCase()}}/core/errors/custom_exception.dart';
 import 'package:{{project_name.snakeCase()}}/core/utils/utility_helper.dart';
 import 'package:{{project_name.snakeCase()}}/core/services/storages/cached_timers/i_cached_timer_handler.dart';
 import 'package:{{project_name.snakeCase()}}/core/services/storages/hive/hive_service_handler.dart';
 
-import '../get_{{return_class.snakeCase()}}_barrel.dart';
+import '../{{name.snakeCase()}}_barrel.dart';
 
 part '{{name.snakeCase()}}_state.dart';
 

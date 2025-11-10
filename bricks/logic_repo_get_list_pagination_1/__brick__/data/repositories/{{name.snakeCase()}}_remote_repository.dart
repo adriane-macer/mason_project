@@ -11,7 +11,7 @@ class {{name.pascalCase()}}RemoteRepository extends I{{name.pascalCase()}}Reposi
     _dioClient = DioClient().instance;
   }
 
-  Future<List<{{return_class.pascalCase()}}>> {{method_name.camelCase()}}({int offset = 0, String sorted = "DSC", int limit = 10}) async{
+  Future<(List<{{return_class.pascalCase()}}Model>,String?)> {{method_name.camelCase()}}({int offset = 0, String sorted = "DSC", int limit = 10}) async{
     try {
       final token = getIt<TokenStorage>().read();
 

@@ -8,13 +8,14 @@ import 'package:{{project_name.snakeCase()}}/core/barrels/remote_repository_barr
 
 class {{name.pascalCase()}}FakeRepository extends I{{name.pascalCase()}}Repository {
   @override
-  Future<List<{{return_class.pascalCase()}}Model>> {{method_name.camelCase()}}() async{
+  Future<(List<{{return_class.pascalCase()}}Model>,String?)> {{method_name.camelCase()}}({required String? cursor, int? limit}) async{
     await Future.delayed(const Duration(milliseconds: 1500));
     try {
       final response =
       await rootBundle.loadString(); //TODO add asset file
       final decoded = jsonDecode(response)['data'] as List;
-      return (decoded).map((data) => {{return_class.pascalCase()}}Model.fromJson(data)).toList();
+      final list = (decoded).map((data) => {{return_class.pascalCase()}}Model.fromJson(data)).toList();
+      return (list, 'fake');
     } on DioException catch (e) {
       throw DioExceptionHelper.getException(e);
     }  catch (e) {
