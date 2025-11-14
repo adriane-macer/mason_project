@@ -52,6 +52,7 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
         emit({{name.pascalCase()}}Success(list));
       }
     } catch (e) {
+      debugPrint("{{name.pascalCase()}}Cubit.initialize: $e");
       if (isClosed) {
         return;
       }

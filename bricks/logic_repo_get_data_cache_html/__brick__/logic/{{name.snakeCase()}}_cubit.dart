@@ -37,11 +37,11 @@ try {
 final result = await _repository.{{method_name.camelCase()}}();
 data = result!;
 try {
-final db = getIt<HiveServiceHandler>().{{return_class.camelCase()}}HiveService;
+final db = getIt<HiveServiceHandler>().{{cache_name.camelCase()}}HiveService;
 await db.saveData(data: result);
 
 getIt<ICachedTimerHandler>()
-    .{{return_class.camelCase()}}CachedTimer
+    .{{cache_name.camelCase()}}CachedTimer
     .writeTimer(date: DateTime.now().toString());
 
 if (isClosed) {
@@ -59,7 +59,7 @@ emit({{name.pascalCase()}}Failed(CustomException(e.toString())));
 if (isClosed) {
 return;
 }
-emit({{name.pascalCase()}}Failed(CustomException(e.toString())));
+emit({{name.pascalCase()}}Failed(UnauthorizedException()));
 } catch (e) {
 if (e is CustomException) {
 if (isClosed) {
@@ -80,7 +80,7 @@ emit({{name.pascalCase()}}Loading());
 
 await _getSavedData();
 final cachedTimer =
-getIt<ICachedTimerHandler>().{{return_class.camelCase()}}CachedTimer.readTimer();
+getIt<ICachedTimerHandler>().{{cache_name.camelCase()}}CachedTimer.readTimer();
 
 DateTime? cachedTime = DateTime.tryParse(cachedTimer ?? "");
 final expired =
@@ -90,16 +90,16 @@ if (expired) {
 await fetchData();
 } else {
 if (data != null) {
-emit({{name.pascalCase()}}Success(result));
+emit({{name.pascalCase()}}Success(data!));
 } else {
-emit({{name.pascalCase()}}Failed(Exception("No data")));
+emit({{name.pascalCase()}}Failed(CustomException("No data")));
 }
 }
 }
 
 Future<void> _getSavedData() async {
 try {
-final db = getIt<HiveServiceHandler>().{{return_class.camelCase().replaceAll("Model", "")}}HiveService;
+final db = getIt<HiveServiceHandler>().{{cache_name.camelCase()}}HiveService;
 final result = await db.getData();
 data = result;
 emit({{name.pascalCase()}}Success(result));

@@ -11,7 +11,7 @@ class {{name.pascalCase()}}RemoteRepository extends I{{name.pascalCase()}}Reposi
     _dioClient = DioClient().instance;
   }
   @override
-  Future<(List<{{return_class.pascalCase()}}Model>,String?)> {{method_name.camelCase()}}({required String? cursor, int? limit}) async{
+  Future<{{return_class.pascalCase()}}Model> {{method_name.camelCase()}}() async{
     try {
       final token = getIt<TokenStorage>().read();
 
@@ -28,14 +28,9 @@ class {{name.pascalCase()}}RemoteRepository extends I{{name.pascalCase()}}Reposi
       }
 
       final response = await _dioClient.get(); // TODO add path
-
       final json = response.data as Map<String, dynamic>;
-      final list = (json["data"] as List)
-          .map((data) =>
-          {{return_class.pascalCase()}}Model.fromJson(data as Map<String, dynamic>))
-          .toList();
-      final nextCursor = json["nextCursor"] as String?;
-      return (list,nextCursor);
+      return
+            {{return_class.pascalCase()}}Model.fromJson(json['data']);
     } on DioException catch (e) {
       throw DioExceptionHelper.getException(e);
     }  catch (e) {
