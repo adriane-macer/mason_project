@@ -1,0 +1,12 @@
+name: mvvm_kotlin_get_data
+description: A simple MVVM template for KMP/Compose Multiplatform.
+version: 0.1.0
+vars:
+  feature_name:
+    type: string
+    default: getData
+    prompt: What is the feature name?
+  package_name:
+    type: string
+    default: com.example.app
+    prompt: What is your package name?

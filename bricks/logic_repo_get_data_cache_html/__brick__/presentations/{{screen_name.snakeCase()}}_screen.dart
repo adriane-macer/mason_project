@@ -34,8 +34,8 @@ class _{{screen_name.pascalCase()}}ScreenState extends State<{{screen_name.pasca
             if (contentLink == null) {
               return Scaffold(
                 appBar: AppBar(title: const Text("{{screen_name.sentenceCase()}}")),
-                body: Expanded(
-                  child: RefreshIndicator(
+                body:
+                  RefreshIndicator(
                     onRefresh: () async {
                       cubit.fetchData();
                     },
@@ -61,27 +61,38 @@ class _{{screen_name.pascalCase()}}ScreenState extends State<{{screen_name.pasca
                       ),
                     ),
                   ),
-                ),
+
               );
             }
 
-            if (contentLink.link?.isNotEmpty ?? false)  {
-              return RefreshIndicator(
-                onRefresh: cubit.fetchData,
-                child: CustomWebViewScreen2(link: contentLink.link ?? ""),
-              );
+            if (contentLink.content?.isNotEmpty ?? false)  {
+return Scaffold(
+appBar: AppBar(title: const Text("{{screenName.sentenceCase()}}")),
+body: RefreshIndicator(
+onRefresh: cubit.fetchData,
+child: SingleChildScrollView(
+child: Padding(
+padding: const EdgeInsets.all(8.0),
+child: HtmlWidget(
+contentLink.content!,
+onLoadingBuilder: (_, _, value) => const Center(
+child: SizedBox(
+height: 36,
+width: 36,
+child: CustomLoadingIndicator(size: 36),
+),
+),
+),
+),
+),
+),
+);
             } else {
-              return Scaffold(
-                appBar: AppBar(title: const Text("{{screenName.sentenceCase()}}")),
-                body: RefreshIndicator(
-                  onRefresh: cubit.fetchData,
-                  child: SingleChildScrollView(
-                    child: HtmlWidget(
-                      cubit.data?.content ?? "",
-                    ),
-                  ),
-                ),
-              );
+
+return RefreshIndicator(
+onRefresh: cubit.fetchData,
+child: CustomWebViewScreen2(link: contentLink.link ?? ""),
+);
             }
           },
         ),

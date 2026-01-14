@@ -21,11 +21,15 @@ return list.first;
 
 Future<void> saveData({required {{return_class.pascalCase()}}Model data}) async {
 await clear();
-await addItem(item: data.toEntity());
+await updateList(list: [data]);
 }
 
   Future<{{cache_name.pascalCase()}}HiveService> initialize() async {
-    Hive.registerAdapter({{return_class.pascalCase()}}EntityAdapter());
+    try{
+Hive.registerAdapter({{return_class.pascalCase()}}EntityAdapter());
+}catch e{
+      debugPrint("{{cache_name.pascalCase()}}HiveService.initialize: $e");
+}
 
     await initializeBox(boxName: _boxName);
     return this;
