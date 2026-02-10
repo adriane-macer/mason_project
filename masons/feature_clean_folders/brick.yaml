@@ -1,0 +1,9 @@
+name: feature_clean_folders
+description: A Mason brick for a Flutter feature folders.
+version: 0.1.0+1
+
+vars:
+  name:
+    type: string
+    description: Feature name (e.g., user, product)
+    prompt: What is the name of the feature?
