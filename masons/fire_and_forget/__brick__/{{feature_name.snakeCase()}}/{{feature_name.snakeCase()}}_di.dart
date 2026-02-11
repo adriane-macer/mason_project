@@ -4,11 +4,11 @@ void setUpEditProfileDI(){
   _register{{feature_name.camelCase()}}();
   sl.registerFactory(() => {{feature_name.pascalCase()}}RemoteDataSourceImpl(sl.call()));
   sl.registerFactory(() => {{feature_name.pascalCase()}}RepositoryImpl(sl.call()));
-  sl.registerFactory(() => sl.call<{{feature_name.pascalCase()}}UseCase>());
-  sl.registerFactory(() => sl.call<{{feature_name.pascalCase()}}Cubit>());
+  sl.registerFactory(() => {{feature_name.pascalCase()}}UseCase(sl()));
+  sl.registerFactory(() => {{feature_name.pascalCase()}}Cubit(sl()));
 }
 
-void _register{{feature_name.camelCase()}}(){
+void _register{{feature_name.pascalCase()}}(){
   final config = FlavorConfig.instance;
   switch(config.flavor){
     case Flavor.dev:
@@ -24,14 +24,14 @@ void _register{{feature_name.camelCase()}}(){
 }
 
 void _registerDev(){
-  sl.registerFactory(() => sl.call<{{feature_name.pascalCase()}}RemoteApi>());
+  sl.registerFactory(() => {{feature_name.pascalCase()}}RemoteApi());
 }
 
 void _registerProd(){
-  sl.registerFactory(() => sl.call<{{feature_name.pascalCase()}}RemoteApi>());
+  sl.registerFactory(() => {{feature_name.pascalCase()}}RemoteApi());
 }
 
 void _registerDemo(){
-  sl.registerFactory(() => sl.call<{{feature_name.pascalCase()}}DemoApi>());
+  sl.registerFactory(() => {{feature_name.pascalCase()}}DemoApi());
 }
 

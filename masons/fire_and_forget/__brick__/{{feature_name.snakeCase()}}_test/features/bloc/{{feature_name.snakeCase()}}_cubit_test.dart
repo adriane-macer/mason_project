@@ -27,10 +27,10 @@ void main() {
   blocTest<{{feature_name.pascalCase()}}Cubit, {{feature_name.pascalCase()}}State>(
     'emits loading → success',
     build: () {
-      when(() => repository.update()).thenAnswer((_) async => right(unit));
+      when(() => repository.{{method_name.camelCase()}}()).thenAnswer((_) async => right(unit));
       return cubit;
     },
-    act: (cubit) => cubit.update(),
+    act: (cubit) => cubit.{{method_name.camelCase()}}(),
     expect: () => [
       const {{feature_name.pascalCase()}}State(status: {{feature_name.pascalCase()}}Status.loading),
       const {{feature_name.pascalCase()}}State(status: {{feature_name.pascalCase()}}Status.success),
