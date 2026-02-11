@@ -1,0 +1,9 @@
+name: flutter_flavor_bootstrap
+description: Bootstrap Flutter app with dev, prod, demo flavors
+version: 0.1.0
+
+vars:
+  app_name:
+    type: string
+    description: Application name
+    default: my_app
