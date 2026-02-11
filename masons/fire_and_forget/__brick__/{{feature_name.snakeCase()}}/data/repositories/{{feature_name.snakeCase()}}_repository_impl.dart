@@ -1,5 +1,6 @@
 import '../../{{feature_name.snakeCase()}}_barrel.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class {{feature_name.pascalCase()}}RepositoryImpl
 implements {{feature_name.pascalCase()}}Repository {

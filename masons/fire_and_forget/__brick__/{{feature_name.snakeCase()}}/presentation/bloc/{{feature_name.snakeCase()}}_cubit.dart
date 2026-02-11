@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:equatable/equatable.dart';
 import '../../{{feature_name.snakeCase()}}_barrel.dart';
 
 part '{{feature_name.snakeCase()}}_state.dart';

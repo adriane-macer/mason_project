@@ -1,7 +1,7 @@
 
 part of '{{feature_name.snakeCase()}}_cubit.dart';
 
-class {{feature_name.pascalCase()}}State{
+class {{feature_name.pascalCase()}}State extends Equatable{
   final {{feature_name.pascalCase()}}Status status;
   final String? error;
   final String? message;
@@ -23,4 +23,7 @@ const {{feature_name.pascalCase()}}State({
       message: message ?? this.message,
 );
 }
+
+@override
+List<Object?> get props => [status, error, message];
 }
