@@ -1,0 +1,14 @@
+name: execute_with_params_and_get
+description: Clean Architecture API call without returned data (Cubit + tests)
+version: 0.1.0
+
+vars:
+  feature_name:
+    type: string
+    description: Feature name (snake_case)
+  method_name:
+    type: string
+    description: Action name (e.g. logout, markRead)
+  http_method:
+    type: string
+    default: POST
