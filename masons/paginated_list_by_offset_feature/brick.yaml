@@ -1,0 +1,6 @@
+name: paginated_list_by_offset_feature
+description: Offset-based paginated list feature with caching and cubit
+vars:
+  feature_name:
+    type: string
+    description: Feature name (e.g. post)

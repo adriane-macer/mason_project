@@ -1,6 +1,6 @@
 import '{{feature_name.snakeCase()}}_barrel.dart';
 
-void setUpEditProfileDI(){
+void setUp{{feature_name.pascalCase()}}DI(){
   _register{{feature_name.camelCase()}}();
   sl.registerFactory(() => {{feature_name.pascalCase()}}RemoteDataSourceImpl(sl.call()));
   sl.registerFactory(() => {{feature_name.pascalCase()}}RepositoryImpl(sl.call()));
