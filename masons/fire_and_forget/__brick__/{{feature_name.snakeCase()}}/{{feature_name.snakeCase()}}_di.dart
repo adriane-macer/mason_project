@@ -2,10 +2,10 @@ import '{{feature_name.snakeCase()}}_barrel.dart';
 
 void setUp{{feature_name.pascalCase()}}DI(){
   _register{{feature_name.camelCase()}}();
-  sl.registerFactory(() => {{feature_name.pascalCase()}}RemoteDataSourceImpl(sl.call()));
-  sl.registerFactory(() => {{feature_name.pascalCase()}}RepositoryImpl(sl.call()));
-  sl.registerFactory(() => {{feature_name.pascalCase()}}UseCase(sl()));
-  sl.registerFactory(() => {{feature_name.pascalCase()}}Cubit(sl()));
+  sl.registerFactory<{{feature_name.pascalCase()}}RemoteDataSource>(() => {{feature_name.pascalCase()}}RemoteDataSourceImpl(sl.call()));
+  sl.registerFactory<{{feature_name.pascalCase()}}Repository>(() => {{feature_name.pascalCase()}}RepositoryImpl(sl.call()));
+  sl.registerFactory<{{feature_name.pascalCase()}}UseCase>(() => {{feature_name.pascalCase()}}UseCase(sl()));
+  sl.registerFactory<{{feature_name.pascalCase()}}Cubit>(() => {{feature_name.pascalCase()}}Cubit(sl()));
 }
 
 void _register{{feature_name.pascalCase()}}(){
@@ -24,14 +24,14 @@ void _register{{feature_name.pascalCase()}}(){
 }
 
 void _registerDev(){
-  sl.registerFactory(() => {{feature_name.pascalCase()}}RemoteApi());
+  sl.registerFactory<{{feature_name.pascalCase()}}Ap>(() => {{feature_name.pascalCase()}}RemoteApi());
 }
 
 void _registerProd(){
-  sl.registerFactory(() => {{feature_name.pascalCase()}}RemoteApi());
+  sl.registerFactory<{{feature_name.pascalCase()}}Ap>(() => {{feature_name.pascalCase()}}RemoteApi());
 }
 
 void _registerDemo(){
-  sl.registerFactory(() => {{feature_name.pascalCase()}}DemoApi());
+  sl.registerFactory<{{feature_name.pascalCase()}}Ap>(() => {{feature_name.pascalCase()}}DemoApi());
 }
 
