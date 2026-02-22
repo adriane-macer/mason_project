@@ -16,8 +16,8 @@ final {{feature_name.pascalCase()}}UseCase useCase;
 
 Future<void> {{method_name}}() async {
 emit(state.copyWith(status: {{feature_name.pascalCase()}}Status.loading));
-
-final result = await useCase();
+final params = {{feature_name.pascalCase()}}UseCaseParams();
+final result = await useCase(params);
 
 result.fold(
 (failure) => emit(state.copyWith(

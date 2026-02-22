@@ -1,4 +1,4 @@
-import '{{feature_name.snakeCase()}}_api.dart'
+import '{{feature_name.snakeCase()}}_api.dart';
 
 class {{feature_name.pascalCase()}}DemoApi extends {{feature_name.pascalCase()}}Api {
   @override

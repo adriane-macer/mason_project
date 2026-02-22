@@ -1,0 +1,15 @@
+name: paginated_list_by_offset
+description: handling location selection
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.10.8 <4.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+

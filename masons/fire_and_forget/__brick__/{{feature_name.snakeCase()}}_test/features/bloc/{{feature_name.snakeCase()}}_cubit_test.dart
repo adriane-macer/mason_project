@@ -15,8 +15,8 @@ void main() {
 
   setUp(() {
     repository = Mock{{feature_name.pascalCase()}}Repository();
-    {{feature_name.snakeCase()}}UseCase = {{feature_name.pascalCase()}}UseCase(repository);
-    cubit = {{feature_name.pascalCase()}}Cubit({{feature_name.snakeCase()}}UseCase);
+    {{feature_name.camelCase()}}UseCase = {{feature_name.pascalCase()}}UseCase(repository);
+    cubit = {{feature_name.pascalCase()}}Cubit({{feature_name.camelCase()}}UseCase);
   });
 
   tearDown(() {
@@ -27,10 +27,10 @@ void main() {
   blocTest<{{feature_name.pascalCase()}}Cubit, {{feature_name.pascalCase()}}State>(
     'emits loading → success',
     build: () {
-      when(() => repository.{{method_name.camelCase()}}()).thenAnswer((_) async => right(unit));
+      when(() => repository. {{method_name.camelCase()}}()).thenAnswer((_) async => right(unit));
       return cubit;
     },
-    act: (cubit) => cubit.{{method_name.camelCase()}}(),
+    act: (cubit) => cubit. {{method_name.camelCase()}}(),
     expect: () => [
       const {{feature_name.pascalCase()}}State(status: {{feature_name.pascalCase()}}Status.loading),
       const {{feature_name.pascalCase()}}State(status: {{feature_name.pascalCase()}}Status.success),
