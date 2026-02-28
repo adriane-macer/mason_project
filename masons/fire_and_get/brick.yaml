@@ -1,0 +1,17 @@
+name: fire_and_get_api
+description: Clean Architecture API call without returned data (Cubit + tests)
+version: 0.1.0
+
+vars:
+  feature_name:
+    type: string
+    description: Feature name (snake_case)
+  method_name:
+    type: string
+    description: Action name (e.g. logout, markRead)
+  return_type:
+    type: string
+    description: Return type
+  http_method:
+    type: string
+    default: POST

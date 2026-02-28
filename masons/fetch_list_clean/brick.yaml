@@ -1,9 +1,12 @@
-name: feature_clean_folders
-description: A Mason brick for a Flutter feature folders.
+name: fetch_list
+description: A Mason brick for a Flutter get list data.
 version: 0.1.0+1
 
 vars:
-  name:
+  feature_name:
     type: string
     description: Feature name (e.g., user, product)
     prompt: What is the name of the feature?
+  entity_name:
+    type: string
+    description: Entity name (e.g., User, Product)

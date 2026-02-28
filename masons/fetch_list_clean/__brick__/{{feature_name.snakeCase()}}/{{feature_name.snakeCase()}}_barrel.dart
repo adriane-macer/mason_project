@@ -1,0 +1,12 @@
+export 'data/datasources/{{feature_name.snakeCase()}}_remote_datasource.dart';
+export 'data/models/{{entity_name.snakeCase()}}_model.dart';
+export 'data/repositories/{{feature_name.snakeCase()}}_repository_impl.dart';
+export 'domain/entities/{{entity_name.snakeCase()}}.dart';
+export 'domain/repositories/{{feature_name.snakeCase()}}_repository.dart';
+export 'domain/usecases/{{feature_name.snakeCase()}}_usecase.dart';
+export 'presentation/cubit/{{feature_name.snakeCase()}}_cubit.dart';
+export 'presentation/cubit/{{feature_name.snakeCase()}}_state.dart';
+export 'presentation/cubit/{{feature_name.snakeCase()}}_cubit.dart';
+export 'presentation/cubit/{{feature_name.snakeCase()}}_state.dart';
+export 'core/network/{{feature_name.snakeCase()}}_api.dart';
+export 'core/network/dio_{{feature_name.snakeCase()}}_api.dart';

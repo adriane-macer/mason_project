@@ -1,0 +1,37 @@
+import '{{feature_name.snakeCase()}}_barrel.dart';
+
+void setUp{{feature_name.pascalCase()}}DI(){
+  _register{{feature_name.camelCase()}}();
+  sl.registerFactory<{{feature_name.pascalCase()}}RemoteDataSource<T> >(() => {{feature_name.pascalCase()}}RemoteDataSourceImpl<T> (sl));
+  sl.registerFactory<{{feature_name.pascalCase()}}Repository<T> >(() => {{feature_name.pascalCase()}}RepositoryImpl<T> (sl));
+  sl.registerFactory<{{feature_name.pascalCase()}}UseCase<T> >(() => {{feature_name.pascalCase()}}UseCase<T> (sl()));
+  sl.registerFactory<{{feature_name.pascalCase()}}Cubit<T> >(() => {{feature_name.pascalCase()}}Cubit<T> (sl()));
+}
+
+void _register{{feature_name.pascalCase()}}(){
+  final config = FlavorConfig.instance;
+  switch(config.flavor){
+    case Flavor.dev:
+      _registerDev();
+      break;
+    case Flavor.prod:
+      _registerProd();
+      break;
+    case Flavor.demo:
+      _registerDemo();
+      break;
+  }
+}
+
+void _registerDev(){
+  sl.registerFactory<{{feature_name.pascalCase()}}Api<T> >(() => {{feature_name.pascalCase()}}RemoteApi<T> ());
+}
+
+void _registerProd(){
+  sl.registerFactory<{{feature_name.pascalCase()}}Api<T> >(() => {{feature_name.pascalCase()}}RemoteApi<T> ());
+}
+
+void _registerDemo(){
+  sl.registerFactory<{{feature_name.pascalCase()}}Api<T> >(() => {{feature_name.pascalCase()}}DemoApi<T> ());
+}
+
