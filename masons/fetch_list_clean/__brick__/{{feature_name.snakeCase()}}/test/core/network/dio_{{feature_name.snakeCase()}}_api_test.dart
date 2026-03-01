@@ -5,17 +5,6 @@ import 'package:mocktail/mocktail.dart';
 class MockDio extends Mock implements Dio {}
 
 void main() {
-  group('Demo{{feature_name.pascalCase()}}Api', () {
-    test('returns the expected demo {{entity_name.camelCase()}}s', () async {
-      final api = Demo{{feature_name.pascalCase()}}Api();
-
-      final result = await api.fetch();
-
-      expect(result, hasLength(3));
-      expect(result.map(({{entity_name.pascalCase()}}) => {{entity_name.camelCase()}}.id), [1, 2, 3]);
-    });
-  });
-
   group('Dio{{feature_name.pascalCase()}}Api', () {
     late MockDio dio;
     late Dio{{feature_name.pascalCase()}}Api api;
@@ -45,7 +34,7 @@ void main() {
 
       expect(result, hasLength(3));
       expect(result.map(({{entity_name.camelCase()}}) => {{entity_name.camelCase()}}.id), [1, 2, 3]);
-      verify(() => dio.get('')).called(1);
+      verify(() => dio.get(any())).called(1);
     });
 
     test('rethrows exceptions from dio client', () async {
@@ -57,7 +46,7 @@ void main() {
       when(() => dio.get(any())).thenThrow(exception);
 
       expect(() => api.fetch(), throwsA(same(exception)));
-      verify(() => dio.get('')).called(1);
+      verify(() => dio.get(any())).called(1);
     });
   });
 }

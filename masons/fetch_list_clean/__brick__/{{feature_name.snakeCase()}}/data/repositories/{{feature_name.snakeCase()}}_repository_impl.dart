@@ -9,16 +9,5 @@ class {{feature_name.pascalCase()}}RepositoryImpl
 {{feature_name.pascalCase()}}RepositoryImpl(this.remoteDataSource);
 
   @override
-  Future<Either<Failure, List<{{entity_name.pascalCase()}}>>> fetch() async {
-    try {
-      final result = await remoteDataSource.fetch();
-      return right(
-result.map((element)=>element.toEntity()).toList()
-      );
-    } on DioException catch (e) {
-      return left(mapDioException(e));
-    } catch (_) {
-      return left(const UnknownFailure());
-    }
-  }
+Future<Either<Failure, List<{{entity_name.pascalCase()}}>>> fetch() => remoteDataSource.fetch();
 }
