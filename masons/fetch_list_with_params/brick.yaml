@@ -1,0 +1,12 @@
+name: fetch_list_with_params
+description: A Mason brick for a Flutter get list data.
+version: 0.1.0+1
+
+vars:
+  feature_name:
+    type: string
+    description: Feature name (e.g., user, product)
+    prompt: What is the name of the feature?
+  entity_name:
+    type: string
+    description: Entity name (e.g., User, Product)
