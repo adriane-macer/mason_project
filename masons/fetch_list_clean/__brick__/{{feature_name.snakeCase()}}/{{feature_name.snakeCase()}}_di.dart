@@ -1,7 +1,7 @@
 import '{{feature_name.snakeCase()}}_barrel.dart';
 
 void setUp{{feature_name.pascalCase()}}DI(){
-  _register{{feature_name.camelCase()}}();
+  _register{{feature_name.pascalCase()}}();
   sl.registerFactory< {{feature_name.pascalCase()}}Repository>(
         () => {{feature_name.pascalCase()}}RepositoryImpl(sl()),
   );

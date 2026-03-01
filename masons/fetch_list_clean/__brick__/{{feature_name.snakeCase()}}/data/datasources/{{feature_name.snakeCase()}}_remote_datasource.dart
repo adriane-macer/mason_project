@@ -2,12 +2,12 @@ import 'package:dio/dio.dart';
 import '../../{{feature_name.snakeCase()}}_barrel.dart';
 
 abstract class {{feature_name.pascalCase()}}RemoteDataSource {
-  Future<Either<Failure,List<{{entity_name.pascalCase()}}Model>>> fetch();
+  Future<Either<Failure,List<{{entity_name.pascalCase()}}>>> fetch();
 }
 
 class {{feature_name.pascalCase()}}RemoteDataSourceImpl
     implements {{feature_name.pascalCase()}}RemoteDataSource {
-final GetProductsApi _api;
+final {{feature_name.pascalCase()}}Api _api;
 
 {{feature_name.pascalCase()}}RemoteDataSourceImpl(this._api);
 

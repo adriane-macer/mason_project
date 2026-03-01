@@ -5,8 +5,7 @@ import '../../{{feature_name.snakeCase()}}_barrel.dart';
 class {{feature_name.pascalCase()}}UseCase
     extends
     UseCaseNoParam<
-          List<{{entity_name.pascalCase()}}>,
-          NoParams
+          List<{{entity_name.pascalCase()}}>
         > {
   final {{feature_name.pascalCase()}}Repository repository;
 
