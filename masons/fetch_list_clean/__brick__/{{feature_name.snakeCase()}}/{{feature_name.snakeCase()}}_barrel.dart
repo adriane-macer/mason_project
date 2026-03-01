@@ -11,4 +11,3 @@ export 'presentation/cubit/{{feature_name.snakeCase()}}_state.dart';
 export 'core/network/{{feature_name.snakeCase()}}_api.dart';
 export 'core/network/dio_{{feature_name.snakeCase()}}_api.dart';
 export 'core/network/demo_{{feature_name.snakeCase()}}_api.dart';
-export 'data/models/request_params.dart';

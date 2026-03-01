@@ -11,7 +11,7 @@ class Dio{{feature_name.pascalCase()}}Api  extends {{feature_name.pascalCase()}}
   Dio{{feature_name.pascalCase()}}Api(this.dio);
 
   @override
-  Future<List<{{entity_name.pascalCase()}}Model>> fetch() async{
+  Future<List<{{entity_name.pascalCase()}}Model>> fetch({{feature_name.pascalCase()}}RequestParams requestParams) async{
     try {
       final response = await dio.get(
         // TODO add path

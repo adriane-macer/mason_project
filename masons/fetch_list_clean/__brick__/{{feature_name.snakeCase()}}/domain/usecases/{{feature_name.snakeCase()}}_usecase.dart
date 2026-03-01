@@ -4,8 +4,8 @@ import '../../{{feature_name.snakeCase()}}_barrel.dart';
 
 class {{feature_name.pascalCase()}}UseCase
     extends
-    UseCaseNo<
-          List<{{entity_name.pascalCase()}}>,{{entity_name.pascalCase()}}Params
+    UseCaseNoParam<
+          List<{{entity_name.pascalCase()}}>
         > {
   final {{feature_name.pascalCase()}}Repository repository;
 
@@ -13,21 +13,10 @@ class {{feature_name.pascalCase()}}UseCase
 
   @override
   Future<Either<Failure, List<{{entity_name.pascalCase()}}>>> call(
-RequestParams(
-// TODO add params
-);
+
   ) {
     return repository.fetch();
   }
-}
-
-class {{entity_name.pascalCase()}}Params extends Equatable {
-  // TODO add params
-
-  const {{entity_name.pascalCase()}}Params();
-
-  @override
-  List<Object?> get props => [];
 }
 
 

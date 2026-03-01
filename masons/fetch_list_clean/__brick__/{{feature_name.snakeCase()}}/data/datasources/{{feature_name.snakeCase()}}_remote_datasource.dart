@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import '../../{{feature_name.snakeCase()}}_barrel.dart';
 
 abstract class {{feature_name.pascalCase()}}RemoteDataSource {
-  Future<Either<Failure,List<{{entity_name.pascalCase()}}>>> fetch(RequestParams requestParams);
+  Future<Either<Failure,List<{{entity_name.pascalCase()}}>>> fetch();
 }
 
 class {{feature_name.pascalCase()}}RemoteDataSourceImpl
@@ -12,9 +12,9 @@ final {{feature_name.pascalCase()}}Api _api;
 {{feature_name.pascalCase()}}RemoteDataSourceImpl(this._api);
 
 @override
-Future<Either<Failure, List<{{entity_name.pascalCase()}}>>> fetch(RequestParams requestParams) async {
+Future<Either<Failure, List<{{entity_name.pascalCase()}}>>> fetch() async {
 try {
-final result = await _api.fetch(requestParams);
+final result = await _api.fetch();
 return Right(result.map((e) => e.toEntity()).toList());
 } on DioException catch (e) {
 return left(mapDioException(e));

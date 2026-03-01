@@ -9,5 +9,5 @@ class {{feature_name.pascalCase()}}RepositoryImpl
 {{feature_name.pascalCase()}}RepositoryImpl(this.remoteDataSource);
 
   @override
-Future<Either<Failure, List<{{entity_name.pascalCase()}}>>> fetch() => remoteDataSource.fetch();
+Future<Either<Failure, List<{{entity_name.pascalCase()}}>>> fetch({{feature_name.pascalCase()}}RequestParams requestParams) => remoteDataSource.fetch();
 }

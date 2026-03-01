@@ -14,11 +14,11 @@ void main() {
       api = Dio{{feature_name.pascalCase()}}Api(dio);
     });
 
-    test('parses response data into {{entity_name.camelCase()}} models', () async {
+    test('parses response data into interest models', () async {
       when(
-        () => dio.get(any()),
+            () => dio.get(any()),
       ).thenAnswer(
-        (_) async => Response(
+            (_) async => Response(
           requestOptions: RequestOptions(path: ''),
           data: {
             'data': [
@@ -30,10 +30,26 @@ void main() {
         ),
       );
 
-      final result = await api.fetch();
+      final result = await api.fetch({{feature_name.pascalCase()}}RequestParams(''));
 
       expect(result, hasLength(3));
-      expect(result.map(({{entity_name.camelCase()}}) => {{entity_name.camelCase()}}.id), [1, 2, 3]);
+      expect(result.map((interest) => interest.id), [1, 2, 3]);
+      verify(() => dio.get(any())).called(1);
+    });
+
+    test('returns empty list when data is null', () async {
+      when(
+            () => dio.get(any()),
+      ).thenAnswer(
+            (_) async => Response(
+          requestOptions: RequestOptions(path: ''),
+          data: {'data': null},
+        ),
+      );
+
+      final result = await api.fetch({{feature_name.pascalCase()}}RequestParams(''));
+
+      expect(result, isEmpty);
       verify(() => dio.get(any())).called(1);
     });
 
@@ -45,7 +61,7 @@ void main() {
 
       when(() => dio.get(any())).thenThrow(exception);
 
-      expect(() => api.fetch(), throwsA(same(exception)));
+      expect(() => api.fetch({{feature_name.pascalCase()}}RequestParams('')), throwsA(same(exception)));
       verify(() => dio.get(any())).called(1);
     });
   });

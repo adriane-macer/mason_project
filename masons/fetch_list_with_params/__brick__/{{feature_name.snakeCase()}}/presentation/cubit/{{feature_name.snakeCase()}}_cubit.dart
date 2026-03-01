@@ -12,11 +12,11 @@ class {{feature_name.pascalCase()}}Cubit extends Cubit<{{feature_name.pascalCase
   {{feature_name.pascalCase()}}Cubit(this.useCase)
     : super(const {{feature_name.pascalCase()}}State.initial());
 
-  Future<void> fetchInitial() {
+  Future<void> fetchInitial({int limit = 20}) {
     return _fetch(limit: limit, isRefresh: false);
   }
 
-  Future<void> refresh() {
+  Future<void> refresh({int limit = 20}) {
     return _fetch(limit: limit, isRefresh: true);
   }
 
@@ -26,11 +26,11 @@ class {{feature_name.pascalCase()}}Cubit extends Cubit<{{feature_name.pascalCase
   }) {
     _debounce?.cancel();
     _debounce = Timer(duration, () {
-      unawaited(fetchInitial(limit: limit));
+      unawaited(fetchInitial());
     });
   }
 
-  Future<void> _fetch({required int limit, required bool isRefresh}) async {
+  Future<void> _fetch({required bool isRefresh}) async {
     final currentRequestId = ++_requestId;
     emit(
       state.copyWith(
@@ -40,9 +40,11 @@ class {{feature_name.pascalCase()}}Cubit extends Cubit<{{feature_name.pascalCase
         clearFailure: true,
       ),
     );
-
+final params = {{entity_name.pascalCase()}}Params(
+// TODO add params
+);
     final result = await useCase(
-
+params
     );
 
     if (isClosed || currentRequestId != _requestId) {
