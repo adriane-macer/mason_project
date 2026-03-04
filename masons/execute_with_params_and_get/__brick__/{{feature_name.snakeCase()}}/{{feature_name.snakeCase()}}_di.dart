@@ -2,8 +2,8 @@ import '{{feature_name.snakeCase()}}_barrel.dart';
 
 void setUpEditProfileDI(){
   _register{{feature_name.camelCase()}}();
-  sl.registerFactory(() => {{feature_name.pascalCase()}}RemoteDataSourceImpl(sl.call()));
-  sl.registerFactory(() => {{feature_name.pascalCase()}}RepositoryImpl(sl.call()));
+  sl.registerFactory(() => {{feature_name.pascalCase()}}RemoteDataSourceImpl(sl()));
+  sl.registerFactory(() => {{feature_name.pascalCase()}}RepositoryImpl(sl()));
   sl.registerFactory(() => {{feature_name.pascalCase()}}UseCase(sl()));
   sl.registerFactory(() => {{feature_name.pascalCase()}}Cubit(sl()));
 }

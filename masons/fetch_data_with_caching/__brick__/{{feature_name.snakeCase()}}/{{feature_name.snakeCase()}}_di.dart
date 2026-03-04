@@ -1,9 +1,14 @@
 import '{{feature_name.snakeCase()}}_barrel.dart';
 
 void setUp{{feature_name.pascalCase()}}DI(){
-  _register{{feature_name.camelCase()}}();
+  _register{{feature_name.pascalCase()}}();
+  sl.registerLazySingleton<{{feature_name.pascalCase()}}LocalDataSource>(() => {{feature_name.pascalCase()}}LocalDataSourceImpl());
   sl.registerFactory<{{feature_name.pascalCase()}}RemoteDataSource>(() => {{feature_name.pascalCase()}}RemoteDataSourceImpl(sl()));
-  sl.registerFactory<{{feature_name.pascalCase()}}Repository>(() => {{feature_name.pascalCase()}}RepositoryImpl(sl()));
+  sl.registerFactory<{{feature_name.pascalCase()}}Repository>(() => {{feature_name.pascalCase()}}RepositoryImpl(
+    sl(), 
+    sl(),
+    ttl: const Duration(minutes: 2),
+  ));
   sl.registerFactory<{{feature_name.pascalCase()}}UseCase>(() => {{feature_name.pascalCase()}}UseCase(sl()));
   sl.registerFactory<{{feature_name.pascalCase()}}Cubit>(() => {{feature_name.pascalCase()}}Cubit(sl()));
 }
@@ -34,4 +39,3 @@ void _registerProd(){
 void _registerDemo(){
   sl.registerFactory<{{feature_name.pascalCase()}}Api>(() => {{feature_name.pascalCase()}}DemoApi());
 }
-
