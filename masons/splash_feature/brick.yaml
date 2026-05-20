@@ -1,0 +1,19 @@
+name: splash_feature
+description: Splash feature with Cubit + AutoRoute + GetIt
+version: 0.1.0
+
+vars:
+  feature_name:
+    type: string
+    description: Feature name (usually "splash")
+    default: splash
+
+  home_route:
+    type: string
+    description: Route name for home screen (e.g. HomeRoute)
+    default: HomeRoute
+
+  login_route:
+    type: string
+    description: Route name for login screen (e.g. LoginRoute)
+    default: LoginRoute
