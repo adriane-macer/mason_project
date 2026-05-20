@@ -1,0 +1,14 @@
+name: auth_service
+description: Auth service with fake + secure storage implementation
+version: 0.1.0
+
+vars:
+  service_name:
+    type: string
+    description: Base service name
+    default: auth
+
+  token_key:
+    type: string
+    description: Secure storage key for token
+    default: access_token
