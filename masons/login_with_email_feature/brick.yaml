@@ -1,0 +1,14 @@
+name: login_with_email_password
+description: Login feature using Clean Architecture, MVVM, Cubit, GetIt, Isar and Flutter Secure Storage
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.50 <0.2.0"
+
+vars:
+  feature_name:
+    type: string
+    description: Feature name
+    default: auth
+    prompt: What is the feature name?
