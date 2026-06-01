@@ -1,0 +1,29 @@
+name: monorepo_apps_flavors_firebase
+description: An enterprise-grade Flutter monorepo generator supporting multiple apps, flavor scaling, and conditional Firebase/Mock environments.
+version: 1.0.0+1
+
+# The minimal required version of the Mason CLI to run this brick safely
+environment:
+  mason: ">=0.1.0-g.10 <0.2.0"
+
+# Declare the variables used inside your __brick__ files.
+# Even though our pre_gen.dart hook collects these variables through a
+# sleek terminal UI, declaring them here acts as an interface contract
+# and fallback document for the template compiler.
+#vars:
+#  apps:
+#    type: list
+#    description: "The list of micro-application shells to generate inside the /apps folder directory."
+#    default: []
+#  flavors:
+#    type: list
+#    description: "The array of deployment target flavors selected (e.g., demo, dev, staging, prod)."
+#    default: []
+#  hasDemoFlavor:
+#    type: boolean
+#    description: "Evaluates to true if the offline 'demo' flavor was selected; triggers fake_auth_impl compilation."
+#    default: false
+#  hasRealFlavors:
+#    type: boolean
+#    description: "Evaluates to true if any live cloud environment (dev, staging, prod) was chosen; triggers firebase_auth_impl installation."
+#    default: false

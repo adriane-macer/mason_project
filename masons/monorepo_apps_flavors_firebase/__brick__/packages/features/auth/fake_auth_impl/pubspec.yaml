@@ -1,0 +1,13 @@
+name: fake_auth_impl
+description: Fake Authentication Implementation for Demo
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  auth_interface:
+    path: ../auth_interface
