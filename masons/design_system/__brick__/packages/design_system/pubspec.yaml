@@ -1,0 +1,8 @@
+name: design_system
+description: internal package for design system
+version: 0.0.1+1
+publish_to: none
+
+environment:
+  sdk: ">=3.3.3 <4.0.0"
+
