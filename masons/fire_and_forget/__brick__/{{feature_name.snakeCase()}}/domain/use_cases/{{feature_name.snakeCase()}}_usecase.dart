@@ -7,7 +7,7 @@ final {{feature_name.pascalCase()}}Repository repository;
 {{feature_name.pascalCase()}}UseCase(this.repository);
 
 Future<Either<Failure, Unit>> call({{feature_name.pascalCase()}}UseCaseParams params) {
-return repository.{{method_name}}();
+return repository.{{method_name.camelCase()}}();
 }
 }
 

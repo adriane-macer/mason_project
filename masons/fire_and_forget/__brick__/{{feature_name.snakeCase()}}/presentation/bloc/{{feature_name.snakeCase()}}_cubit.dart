@@ -14,7 +14,7 @@ final {{feature_name.pascalCase()}}UseCase useCase;
 {{feature_name.pascalCase()}}Cubit(this.useCase)
     : super(const {{feature_name.pascalCase()}}State(status: {{feature_name.pascalCase()}}Status.initial));
 
-Future<void> {{method_name}}() async {
+Future<void> {{method_name.camelCase()}}() async {
 emit(state.copyWith(status: {{feature_name.pascalCase()}}Status.loading));
 final params = {{feature_name.pascalCase()}}UseCaseParams();
 final result = await useCase(params);

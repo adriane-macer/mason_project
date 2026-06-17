@@ -1,7 +1,7 @@
 import '../../{{feature_name.snakeCase()}}_barrel.dart';
 
 abstract class {{feature_name.pascalCase()}}RemoteDataSource {
-Future<void> {{method_name}}();
+Future<void> {{method_name.camelCase()}}();
 }
 
 class {{feature_name.pascalCase()}}RemoteDataSourceImpl
@@ -11,7 +11,7 @@ final {{feature_name.pascalCase()}}Api api;
 {{feature_name.pascalCase()}}RemoteDataSourceImpl(this.api);
 
 @override
-Future<void> {{method_name}}() async {
-await api.{{method_name}}();
+Future<void> {{method_name.camelCase()}}() async {
+await api.{{method_name.camelCase()}}();
 }
 }

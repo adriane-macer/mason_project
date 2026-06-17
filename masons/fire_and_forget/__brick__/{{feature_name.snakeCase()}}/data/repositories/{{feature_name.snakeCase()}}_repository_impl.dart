@@ -11,7 +11,7 @@ final {{feature_name.pascalCase()}}RemoteDataSource remote;
 @override
 Future<Either<Failure, Unit>> {{method_name}}() async {
 try {
-await remote.{{method_name}}();
+await remote.{{method_name.camelCase()}}();
 return right(unit);
 } on DioException catch (e) {
 return left(mapDioException(e));
