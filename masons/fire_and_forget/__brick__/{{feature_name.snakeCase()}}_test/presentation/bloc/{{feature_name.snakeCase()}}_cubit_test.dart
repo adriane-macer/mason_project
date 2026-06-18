@@ -10,7 +10,7 @@ class Mock{{feature_name.pascalCase()}}Repository extends Mock implements
 
 void main() {
   late Mock{{feature_name.pascalCase()}}Repository repository;
-  late {{feature_name.pascalCase()}}UseCase {{feature_name.snakeCase()}}UseCase;
+  late {{feature_name.pascalCase()}}UseCase {{feature_name.camelCase()}}UseCase;
   late {{feature_name.pascalCase()}}Cubit cubit;
 
   setUp(() {

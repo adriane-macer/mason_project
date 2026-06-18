@@ -17,7 +17,7 @@ void main(){
   });
 
 test('returns unit when API succeeds', () async {
-when(() => remote.{{method_name.camelCase}}())
+when(() => remote.{{method_name.camelCase()}}())
     .thenAnswer((_) async {});
 
 final result = await repository.{{method_name.camelCase}}();
@@ -26,13 +26,13 @@ expect(result, right(unit));
 });
 
   test('returns failure when DioException occurs', () async {
-    when(() => remote.{{method_name.camelCase}}())
+    when(() => remote.{{method_name.camelCase()}}())
         .thenThrow(DioException(
     requestOptions: RequestOptions(path: ''),
     type: DioExceptionType.connectionTimeout,
     ));
 
-    final result = await repository.{{method_name.camelCase}}();
+    final result = await repository.{{method_name.camelCase()}}();
 
     expect(result.isLeft(), true);
   });

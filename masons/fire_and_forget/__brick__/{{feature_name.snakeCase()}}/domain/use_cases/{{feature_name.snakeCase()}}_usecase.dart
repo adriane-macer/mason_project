@@ -11,6 +11,6 @@ return repository.{{method_name.camelCase()}}();
 }
 }
 
-class {{feature_name.pascalCase()}}UseCaseParam{
+class {{feature_name.pascalCase()}}UseCaseParams{
 
 }

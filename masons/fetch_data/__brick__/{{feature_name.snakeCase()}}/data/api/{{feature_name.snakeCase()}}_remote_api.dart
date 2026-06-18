@@ -1,0 +1,10 @@
+import '{{feature_name.snakeCase()}}_api.dart';
+import '../../{{feature_name.snakeCase()}}_barrel.dart';
+
+class {{feature_name.pascalCase()}}RemoteApi implements {{feature_name.pascalCase()}}Api {
+  @override
+  Future<{{return_type.pascalCase()}}Model> {{method_name.camelCase()}}() async {
+    // TODO: implement {{method_name}}
+    throw UnimplementedError();
+  }
+}

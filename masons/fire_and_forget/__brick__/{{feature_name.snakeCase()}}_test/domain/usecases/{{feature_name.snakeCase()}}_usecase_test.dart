@@ -17,7 +17,7 @@ void main() {
   });
 
   test('delegates call to repository', () async {
-    when(() => repository.{{method_name.camelCase}}())
+    when(() => repository.{{method_name.camelCase()}}())
         .thenAnswer((_) async => right(unit));
 
     final result = await {{feature_name.camelCase()}}UseCase();

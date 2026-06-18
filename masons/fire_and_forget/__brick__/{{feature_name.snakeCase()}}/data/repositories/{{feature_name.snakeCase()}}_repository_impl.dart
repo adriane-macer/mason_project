@@ -9,7 +9,7 @@ final {{feature_name.pascalCase()}}RemoteDataSource remote;
 {{feature_name.pascalCase()}}RepositoryImpl(this.remote);
 
 @override
-Future<Either<Failure, Unit>> {{method_name}}() async {
+Future<Either<Failure, Unit>> {{method_name.camelCase()}}() async {
 try {
 await remote.{{method_name.camelCase()}}();
 return right(unit);
