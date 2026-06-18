@@ -1,0 +1,17 @@
+name: fetch_data_with_params
+description: Clean Architecture API call with parameters (Cubit + tests)
+version: 0.1.0
+
+vars:
+  feature_name:
+    type: string
+    description: Feature name (snake_case)
+  method_name:
+    type: string
+    description: Action name (e.g. logout, markRead)
+  return_type:
+    type: string
+    description: Return type
+  params_type:
+    type: string
+    description: Parameters type
