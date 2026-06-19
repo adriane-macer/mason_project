@@ -1,0 +1,8 @@
+name: melos_brick
+description: Creation of melos yaml
+version: 0.1.0
+
+vars:
+  project_name:
+    type: string
+    description: Project name (snake_case)

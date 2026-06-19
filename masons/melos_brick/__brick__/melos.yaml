@@ -1,0 +1,51 @@
+name: project_name
+
+packages:
+  - apps/**
+  - packages/**
+
+scripts:
+  lint:all:
+    description: Run lints in all packages.
+    run: melos run lint:select --no-select
+  lint:select:
+    description: Run lints in selected packages.
+    run: flutter analyze .
+    exec:
+      concurrency: 5
+
+  test:all:
+    description: Run tests in all packages.
+    run: melos run test:select --no-select
+  test:select:
+    description: Run tests in selected packages.
+    run: flutter test
+    exec:
+      concurrency: 1
+
+  build_runner:all:
+    description: Run build_runner build in all packages.
+    run: melos run build_runner:select --no-select
+  build_runner:select:
+    description: Run build_runner build in selected packages.
+    run: flutter pub run build_runner build --delete-conflicting-outputs
+    exec:
+      concurrency: 1
+
+  clean:all:
+    description: Clean all packages.
+    run: melos run clean:select --no-select
+  clean:select:
+    description: Clean selected packages.
+    run: flutter clean
+    exec:
+      concurrency: 5
+
+  get:all:
+    description: Get dependencies in all packages.
+    run: melos run get:select --no-select
+  get:select:
+    description: Get dependencies in selected packages.
+    run: flutter pub get
+    exec:
+      concurrency: 5
