@@ -1,8 +1,14 @@
 name: design_system
-description: internal package for design system
+description: internal package for core
 version: 0.0.1+1
 publish_to: none
 
 environment:
   sdk: ">=3.3.3 <4.0.0"
 
+dependencies:
+  flutter:
+    sdk:  flutter
+  flutter_bloc: ^8.1.6
+  core_package:
+    path: ../core

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import '../tokens/brand_tokens.dart';
 
 extension ContextExtension on BuildContext {
   ThemeData get theme => Theme.of(this);
+
+  BrandTokens get brand => theme.extension<BrandTokens>()!;
 
   ColorScheme get colors => theme.colorScheme;
 
