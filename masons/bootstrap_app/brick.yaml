@@ -1,0 +1,24 @@
+name: bootstrap_app
+description: A brick to scaffold a bootstrap package for a specific app role.
+version: 0.1.0+1
+vars:
+  name:
+    type: string
+    description: The name of the bootstrap (e.g. property_staff, unit_owner)
+    default: property_staff
+    prompt: What is the name of the bootstrap?
+  package_name:
+    type: string
+    description: The name of the package (e.g. bootstrap_property_staff)
+    default: bootstrap_property_staff
+    prompt: What is the name of the package?
+  router_name:
+    type: string
+    description: The name of the router class (e.g. PropertyStaffRouter)
+    default: PropertyStaffRouter
+    prompt: What is the name of the router class?
+  router_package:
+    type: string
+    description: The name of the router package (e.g. property_staff_router)
+    default: property_staff_router
+    prompt: What is the name of the router package?

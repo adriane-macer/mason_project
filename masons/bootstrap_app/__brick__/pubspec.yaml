@@ -1,0 +1,55 @@
+name: {{package_name}}
+description: Bootstrap package for {{name}}
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  get_it: ^8.0.0
+  flutter_bloc: ^8.1.6
+  firebase_core: ^3.10.1
+  firebase_messaging: ^15.2.1
+  package_info_plus: ^8.1.2
+  flutter_secure_storage: ^10.3.1
+
+  design_system:
+    path: ../../../packages/design_system
+  core_package:
+    path: ../../../packages/core
+  app:
+    path: ../../../packages/app
+  app_router:
+    path: ../../../packages/app_router
+  bootstrap_shared:
+    path: ../../../packages/bootstraps/bootstrap_shared
+  
+  {{router_package}}:
+    path: ../../../packages/{{router_package}}
+
+  # Feature Modules (Adjust as needed)
+  authentication:
+    path: ../../../packages/features/authentication
+  feature_user:
+    path: ../../../packages/features/user/feature_user
+  feature_visitors:
+    path: ../../../packages/features/visitor/feature_visitors
+  feature_units:
+    path: ../../../packages/features/units/feature_units
+  feature_issues:
+    path: ../../../packages/features/issue/feature_issues
+  feature_maintenance:
+    path: ../../../packages/features/maintenance/feature_maintenance
+  amenities:
+    path: ../../../packages/features/amenities
+  feature_billing:
+    path: ../../../packages/features/billing/feature_billing
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0

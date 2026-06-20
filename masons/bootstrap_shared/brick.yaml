@@ -1,0 +1,9 @@
+name: bootstrap_shared
+description: A brick to scaffold the shared bootstrap package containing common DI and Firebase setup.
+version: 0.1.0+1
+vars:
+  package_name:
+    type: string
+    description: The name of the package (e.g. bootstrap_shared)
+    default: bootstrap_shared
+    prompt: What is the name of the package?
