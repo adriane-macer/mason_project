@@ -1,0 +1,9 @@
+name: feature_authentication
+description: A brick to scaffold a clean architecture based authentication feature.
+version: 0.1.0+1
+vars:
+  package_name:
+    type: string
+    description: The name of the package
+    default: authentication
+    prompt: What is the name of the package?
