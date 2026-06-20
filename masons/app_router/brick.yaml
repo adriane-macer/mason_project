@@ -1,0 +1,14 @@
+name: app_router
+description: A brick to scaffold a modular GoRouter based app router.
+version: 0.1.0+1
+vars:
+  name:
+    type: string
+    description: The name of the project
+    default: my_app
+    prompt: What is the name of the project?
+  package_name:
+    type: string
+    description: The name of the package
+    default: app_router
+    prompt: What is the name of the package?

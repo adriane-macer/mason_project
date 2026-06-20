@@ -1,0 +1,25 @@
+name: {{package_name}}
+description: App router package for {{name}}
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^17.3.0
+  authentication:
+    path: ../../features/authentication
+  dashboard_shared:
+    path: ../../features/dashboard/dashboard_shared
+  feature_user:
+    path: ../../features/user/feature_user
+  core_package:
+    path: ../../core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
